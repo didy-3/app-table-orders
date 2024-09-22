@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   base:process.env.NODE_ENV === 'production'
-  ? '/orders-table/'
+  ? '/app-table-orders/'
   : '/',
   server:{
     port:8080
