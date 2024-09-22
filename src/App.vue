@@ -5,14 +5,14 @@
 			<OrdersTable />
 		</template>
 		
-		<DxPopup v-if="orderShown!=null || askToken" :visible="true" :title="askToken? 'Введите токен': 'Заказ'" height="auto"  maxHeight="90vh" :width="700"
-			@hiding="hidePopup">
+		<DxPopup v-if="orderShown!=null || askToken" :visible="true" :title="askToken? 'Введите токен': 'Заказ ' + orderShown?.uid1c" 
+		height="auto"  maxHeight="90vh" :width="700" maxWidth="90vw" @hiding="hidePopup" :showCloseButton="true" >
 			<DxScrollView>
-			<div class="flex-column" v-if="askToken">
-				<DxTextBox label="Токен" placeholder="Введите токен" v-model:value="token"  />
-				<DxButton text="Сохранить" @click="checkToken" />
-			</div>
-			<OrderCard v-if="orderShown!=null" :order='orderShown' />
+				<div class="flex-column" v-if="askToken">
+					<DxTextBox label="Токен" placeholder="Введите токен" v-model:value="token"  />
+					<DxButton text="Сохранить" @click="checkToken" />
+				</div>
+				<OrderCard v-if="orderShown!=null" :order='orderShown' />
 			</DxScrollView>
 		</DxPopup>
 	</div>

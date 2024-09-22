@@ -4,7 +4,7 @@
         <DxNumberBox label='Идентификатор заказа' v-model:value='orderId' />
         <DxButton text="Искать" @click="getOrder" :elementAttr="{class:'btn-with-margin-top'}" />
     </div>
-    <div class="flex-row">
+    <div class="toolbar-filter-2-wrapper">
         <DxDateRangeBox 
             min="2024-05-01"
             max="2024-06-30"
@@ -75,5 +75,14 @@ function getOrder(){
 </script>
 <style lang="scss">
 .btn-with-margin-top{margin-top: 7.5px;}
-.statuses-box{min-width:400px;}
+.statuses-box{min-width:360px;}
+.toolbar-filter-2-wrapper{
+    display: flex;
+    gap:10px;
+}
+@media all and (max-width: 750px) {
+    .toolbar-filter-2-wrapper{
+        flex-direction: column;
+    }
+}
 </style>
