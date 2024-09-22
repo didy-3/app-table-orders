@@ -1,11 +1,5 @@
 <template>
 	<div class="page-content flex-column ">
-		<!-- <DxPopup v-if="askToken" :visible="askToken" title="Введите токен" height="auto" :width="700">
-			<div class="flex-column">
-				<DxTextBox label="Токен" placeholder="Введите токен" v-model:value="token"  />
-				<DxButton text="Сохранить" @click="checkToken" />
-			</div>
-		</DxPopup> -->
 		<template v-if="token">
 			<OrdersTableToolbar />
 			<OrdersTable />
