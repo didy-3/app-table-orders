@@ -8,7 +8,7 @@
         :show-borders="true"
         :show-row-lines="true"
         :row-alternation-enabled="true"
-        :style="{ maxHeight: '90vh' }"
+        :style="{ maxHeight: '84vh' }"
         :column-auto-width="true"
         :columns="columns"
         @row-click="rowClick" >   

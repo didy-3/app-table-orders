@@ -1,5 +1,6 @@
 <template lang="">
-    <div class="orders-table-wrapper">
+    <div class="orders-table-wrapper flex-column">
+        <div>Найдено {{ordersList.length}} заказов</div>
         <TableComponent :rows="ordersList" :columns="columns" :row-click="getOrder" />
     </div>
 </template>
@@ -70,7 +71,7 @@ function statusTemplate(container: HTMLTableCellElement, options: any) {
     else if (options.data?.status?.id == 6)
         container.classList.add('green-bg')
     else if (options.data?.status?.id == 5)
-        container.classList.add('green-bg')
+        container.classList.add('red-bg')
 }
 function getOrder(e:any) {
     main.getOrder(e.data.id)
@@ -82,9 +83,27 @@ function getOrder(e:any) {
         td {
             background: rgb(221, 221, 221);
         }
+        td.dark-green-bg, .dx-row-alt td.dark-green-bg{
+            background: #5CB67F;
+        }
+        td.green-bg, .dx-row-alt td.green-bg{
+            background: #C1FBA4;
+        }
+        td.red-bg, .dx-row-alt td.red-bg{
+            background: #FFB8B8;
+        }
     }
     td {
         cursor: pointer;
+    }
+    td.dark-green-bg, .dx-row-alt td.dark-green-bg{
+        background: #5CB67F;
+    }
+    td.green-bg, .dx-row-alt td.green-bg{
+        background: #C1FBA4;
+    }
+    td.red-bg, .dx-row-alt td.red-bg{
+        background: #FFB8B8;
     }
 }
 </style>
